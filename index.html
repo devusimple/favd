@@ -2,23 +2,103 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0a0a" />
+
+    <title>FAVD — Universal Video & Audio Downloader | Every Platform, Every Format</title>
     <meta
       name="description"
-      content="FAVD — Universal media downloader. Every platform, every format."
+      content="FAVD is a free universal media downloader. Paste any link from YouTube, TikTok, Instagram, X, Vimeo, Reddit and 1,750+ platforms to get direct video and audio download links in every available format and resolution."
     />
-    <title>FAVD — Universal Media Downloader</title>
+    <meta
+      name="keywords"
+      content="video downloader, youtube downloader, tiktok downloader, instagram downloader, audio downloader, mp4 downloader, mp3 downloader, online video download, universal downloader"
+    />
+    <meta name="author" content="FAVD" />
+    <meta name="robots" content="index, follow" />
+    <meta name="application-name" content="FAVD" />
+    <link rel="canonical" href="https://favdr.vercel.app/" />
+
+    <!-- Icons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://favdr.vercel.app/" />
+    <meta property="og:site_name" content="FAVD" />
+    <meta
+      property="og:title"
+      content="FAVD — Universal Video & Audio Downloader"
+    />
+    <meta
+      property="og:description"
+      content="Paste any link and get direct download links for every video and audio format from 1,750+ platforms."
+    />
+    <meta property="og:image" content="https://favdr.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="FAVD — Universal Video & Audio Downloader"
+    />
+    <meta
+      name="twitter:description"
+      content="Paste any link and get direct download links for every video and audio format from 1,750+ platforms."
+    />
+    <meta name="twitter:image" content="https://favdr.vercel.app/og-image.png" />
+
+    <!-- PWA -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="FAVD" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://jstk.vercel.app" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "FAVD",
+        "url": "https://favdr.vercel.app/",
+        "description": "Free universal video and audio downloader. Paste a link from YouTube, TikTok, Instagram, X, Vimeo, Reddit and 1,750+ platforms to get direct download links for every available format.",
+        "image": "https://favdr.vercel.app/og-image.png",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Web",
+        "browserRequirements": "Requires JavaScript",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <h1>FAVD — Universal Video & Audio Downloader</h1>
+      <p>
+        Paste a link from YouTube, TikTok, Instagram, X, Vimeo, Reddit or any of
+        1,750+ platforms to get direct video and audio download links.
+      </p>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
