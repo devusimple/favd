@@ -2,7 +2,9 @@ import { useCallback, useEffect, useState } from "react";
 import Header from "./components/Header";
 import URLBar from "./components/URLBar";
 import ResultPanel from "./components/ResultPanel";
+import InstallPrompt from "./components/InstallPrompt";
 import { fetchFormats, fetchPlatforms } from "./lib/api";
+import { useInstallPrompt } from "./lib/install";
 import type { FormatsResponse } from "./types";
 
 export default function App() {
@@ -11,6 +13,7 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [platformCount, setPlatformCount] = useState<number | null>(null);
+  const install = useInstallPrompt();
 
   useEffect(() => {
     fetchPlatforms()
@@ -36,7 +39,11 @@ export default function App() {
 
   return (
     <div className="flex min-h-screen flex-col bg-ink text-foreground">
-      <Header platformCount={platformCount} />
+      <Header
+        platformCount={platformCount}
+        canInstall={!!install.deferred && !install.installed}
+        onInstall={() => void install.install()}
+      />
 
       <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-16 sm:px-6 sm:py-24">
         <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted">
@@ -98,6 +105,9 @@ export default function App() {
           <span>Powered by yt-dlp — direct links expire after extraction</span>
         </div>
       </footer>
+
+      {install.showPrompt && <div className="h-24" aria-hidden="true" />}
+      <InstallPrompt {...install} />
     </div>
   );
 }
